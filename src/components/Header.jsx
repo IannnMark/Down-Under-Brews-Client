@@ -19,29 +19,41 @@ export default function Header() {
         </Link>
         <div className="hidden sm:flex gap-4 flex-grow justify-center mr-72">
           <nav className="flex gap-6 uppercase font-medium">
-            <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
-              Our Coffee
-            </a>
-            <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
-              About Us
-            </a>
-            <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
-              Shop
-            </a>
-            <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
-              Visit Us
-            </a>
-            <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
-              Contact
-            </a>
+            <Link to="/product">
+              <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
+                Our Coffee
+              </a>
+            </Link>
+            <Link to="/about-us">
+              <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
+                About Us
+              </a>
+            </Link>
+            <Link to="/shop">
+              <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
+                Shop
+              </a>
+            </Link>
+            <Link to="/visit-us">
+              <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
+                Visit Us
+              </a>
+            </Link>
+            <Link to="/contact">
+              <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
+                Contact
+              </a>
+            </Link>
           </nav>
         </div>
 
         <div className="hidden sm:flex absolute right-0 gap-6 items-center pr-3">
           <ul>
-            <li className="transition duration-300 font-semibold hover:shadow-current hover:text-black px-4 py-2 rounded hover:scale-105">
-              Sign In
-            </li>
+            <Link to="/sign-in">
+              <li className="transition duration-300 font-semibold hover:shadow-current hover:text-black px-4 py-2 rounded hover:scale-105">
+                Sign In
+              </li>
+            </Link>
           </ul>
           <form className="lg:inline border border-gray-400 font-semibold hover:shadow-current hover:text-black rounded hover:scale-105">
             <input
@@ -76,36 +88,46 @@ export default function Header() {
               className="absolute top-10 right-0 bg-white shadow-current flex flex-col items-start p-4 gap-3 z-10 w-48"
               onClick={(e) => e.stopPropagation()}
             >
-              <a
-                className="uppercase hover:shadow-current transition duration-300 hover:text-black hover:scale-105"
-                onClick={() => setShowMenu(false)}
-              >
-                Our Coffee
-              </a>
-              <a
-                className="uppercase hover:shadow-current transition duration-300 hover:text-black hover:scale-105"
-                onClick={() => setShowMenu(false)}
-              >
-                About Us
-              </a>
-              <a
-                className="uppercase hover:shadow-current transition duration-300 hover:text-black hover:scale-105"
-                onClick={() => setShowMenu(false)}
-              >
-                Shop
-              </a>
-              <a
-                className="uppercase hover:shadow-current transition duration-300 hover:text-black hover:scale-105"
-                onClick={() => setShowMenu(false)}
-              >
-                Visit Us
-              </a>
-              <a
-                className="uppercase hover:shadow-current transition duration-300 hover:text-black hover:scale-105"
-                onClick={() => setShowMenu(false)}
-              >
-                Contact
-              </a>
+              <Link to="/product">
+                <a
+                  className="uppercase hover:shadow-current transition duration-300 hover:text-black hover:scale-105"
+                  onClick={() => setShowMenu(false)}
+                >
+                  Our Coffee
+                </a>
+              </Link>
+              <Link to="/about-us">
+                <a
+                  className="uppercase hover:shadow-current transition duration-300 hover:text-black hover:scale-105"
+                  onClick={() => setShowMenu(false)}
+                >
+                  About Us
+                </a>
+              </Link>
+              <Link to="/shop">
+                <a
+                  className="uppercase hover:shadow-current transition duration-300 hover:text-black hover:scale-105"
+                  onClick={() => setShowMenu(false)}
+                >
+                  Shop
+                </a>
+              </Link>
+              <Link to="/visit-us">
+                <a
+                  className="uppercase hover:shadow-current transition duration-300 hover:text-black hover:scale-105"
+                  onClick={() => setShowMenu(false)}
+                >
+                  Visit Us
+                </a>
+              </Link>
+              <Link to="/contact">
+                <a
+                  className="uppercase hover:shadow-current transition duration-300 hover:text-black hover:scale-105"
+                  onClick={() => setShowMenu(false)}
+                >
+                  Contact
+                </a>
+              </Link>
             </div>
           )}
         </div>
