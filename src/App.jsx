@@ -10,6 +10,7 @@ import SignIn from "./pages/user/SignIn";
 import SignUp from "./pages/user/SignUp";
 import PrivateRoute from "./components/PrivateRoute";
 import Profile from "./pages/user/Profile";
+import Dashboard from "./pages/admin/Dashboard";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
+        </Route>
+        <Route element={<PrivateRoute isAdmin={true} />}>
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
