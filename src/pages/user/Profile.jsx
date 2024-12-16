@@ -1,6 +1,11 @@
 import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import {
+  signOutUserStart,
+  signOutUserSuccess,
+  signOutUserFailure,
+} from "../../redux/user/userSlice";
 
 export default function Profile() {
   const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -21,6 +26,21 @@ export default function Profile() {
     if (file) {
       setSelectedImage(file);
       setFormData({ ...formData, avatar: file });
+    }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      dispatch(signOutUserStart());
+      const res = await fetch(`/api/auth/logout`);
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(signOutUserFailure(data.message));
+        return;
+      }
+      dispatch(signOutUserSuccess(data));
+    } catch (error) {
+      dispatch(signOutUserFailure(error.message));
     }
   };
 
@@ -79,7 +99,9 @@ export default function Profile() {
       </form>
       <div className="flex justify-between mt-5">
         <span className="text-red-700 cursor-pointer">Delete Account</span>
-        <span className="text-red-700 cursor-pointer">SignOut</span>
+        <span onClick={handleSignOut} className="text-red-700 cursor-pointer">
+          SignOut
+        </span>
       </div>
       <p className="text-red-700">{error ? error : ""}</p>
     </div>
