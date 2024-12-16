@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Content/Home";
-import AboutUs from "./pages/content/Aboutus";
+import AboutUs from "./pages/content/AboutUs";
 import Contact from "./pages/content/Contact";
 import Product from "./pages/content/Product";
 import Shop from "./pages/content/Shop";
@@ -11,6 +11,7 @@ import SignUp from "./pages/user/SignUp";
 import PrivateRoute from "./components/PrivateRoute";
 import Profile from "./pages/user/Profile";
 import Dashboard from "./pages/admin/Dashboard";
+import CreateProduct from "./pages/admin/CreateProduct";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         </Route>
         <Route element={<PrivateRoute isAdmin={true} />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/admin/create-product" element={<CreateProduct />} />
         </Route>
       </Routes>
     </BrowserRouter>
