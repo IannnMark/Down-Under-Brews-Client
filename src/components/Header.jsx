@@ -20,27 +20,27 @@ export default function Header() {
         <div className="hidden sm:flex gap-4 flex-grow justify-center mr-72">
           <nav className="flex gap-6 uppercase font-medium">
             <Link to="/product">
-              <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
+              <a className="inline-block hover:opacity-95 hover:shadow-current hover:text-black hover:scale-105 rounded transition duration-300 px-4 py-2">
                 Our Coffee
               </a>
             </Link>
             <Link to="/about-us">
-              <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
+              <a className="inline-block hover:opacity-95 hover:shadow-current hover:text-black hover:scale-105 rounded transition duration-300 px-4 py-2">
                 About Us
               </a>
             </Link>
             <Link to="/shop">
-              <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
+              <a className="inline-block hover:opacity-95 hover:shadow-current hover:text-black hover:scale-105 rounded transition duration-300 px-4 py-2">
                 Shop
               </a>
             </Link>
             <Link to="/visit-us">
-              <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
+              <a className="inline-block hover:opacity-95 hover:shadow-current hover:text-black hover:scale-105 rounded transition duration-300 px-4 py-2">
                 Visit Us
               </a>
             </Link>
             <Link to="/contact">
-              <a className="hover:opacity-95 hover:shadow-current hover:text-black rounded transition duration-300 px-4 py-2 hover:scale-105">
+              <a className="inline-block hover:opacity-95 hover:shadow-current hover:text-black hover:scale-105 rounded transition duration-300 px-4 py-2">
                 Contact
               </a>
             </Link>
