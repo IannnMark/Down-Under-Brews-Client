@@ -80,10 +80,10 @@ export default function Home() {
           </p>
 
           <div className="mt-10">
-            <button className="text-red-950 uppercase text-[16px] font-semibold bg-orange-300 rounded-lg px-3 py-2">
+            <button className="text-red-950 uppercase text-[16px] font-semibold bg-orange-300 rounded-lg px-3 py-2 hover:scale-105 transition duration-300">
               Our Story
             </button>
-            <button className="text-orange-300 uppercase text-[16px] font-semibold ml-5 border border-gray-300 rounded-lg px-3 py-2">
+            <button className="text-orange-300 uppercase text-[16px] font-semibold ml-5 border border-gray-300 rounded-lg px-3 py-2 hover:scale-105 transition duration-300">
               Meet the Roasters
             </button>
           </div>
