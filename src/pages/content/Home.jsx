@@ -140,7 +140,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10">
+      <div className="max-w-5xl mx-auto p-3 flex flex-col gap-8 my-10">
+        <div className="flex justify-start">
+          <div className="text-left">
+            <h1 className="text-5xl uppercase font-semibold text-red-950">
+              Explore our signature blends
+            </h1>
+          </div>
+        </div>
         {recentProducts && recentProducts.length > 0 && (
           <div>
             <div className="flex flex-wrap gap-8">
