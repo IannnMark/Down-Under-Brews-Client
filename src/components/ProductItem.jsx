@@ -2,21 +2,21 @@ import { Link } from "react-router-dom";
 
 export default function ProductItem({ product }) {
   return (
-    <div className="bg-gray-300 shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full sm:w-[330px] ml-3">
+    <div className="shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full sm:w-[330px] ml-3">
       <Link to={`/products/${product._id}`}>
         <img
           src={product.imageUrls[0].url}
           alt={product.name}
-          className="h-[320px] sm:h-[220px] w-full object-cover hover:scale-105 transition-scale duration-300"
+          className="h-[320px] sm:h-[220px] w-full object-cover hover:scale-105
+           transition-scale duration-300"
         />
       </Link>
-      <div className="p-4">
-        <h3 className="font-semibold text-lg text-gray-800">{product.name}</h3>
-        <p className="text-gray-800 font-semibold mt-2">${product.price}</p>
+      <div className="p-3 flex hover:scale-105 transition duration-300 gap-36">
+        <h3 className="truncate text-lg font-semibold text-red-950">
+          {product.name}
+        </h3>
+        <p className="text-red-950 font-semibold">${product.price}</p>
       </div>
-      <button className="text-xl text-white bg-black rounded-md ml-28 hover:bg-gray-800 px-2">
-        Add to Cart
-      </button>
     </div>
   );
 }
