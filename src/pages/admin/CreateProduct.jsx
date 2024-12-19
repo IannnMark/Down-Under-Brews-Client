@@ -167,6 +167,7 @@ export default function CreateProduct() {
           id="price"
           required
           min="1"
+          step="0.01"
           onChange={handleChange}
           value={formData.price}
         />
