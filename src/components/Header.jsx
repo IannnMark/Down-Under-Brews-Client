@@ -4,8 +4,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import Logo from "../../images/logo.png";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Header() {
+  const { currentUser } = useSelector((state) => state.user);
   const [showMenu, setShowMenu] = useState(false);
   return (
     <header className="bg-white shadow-lg py-3 text-base text-red-900">
@@ -49,10 +51,18 @@ export default function Header() {
 
         <div className="hidden sm:flex absolute right-0 gap-6 items-center pr-3">
           <ul>
-            <Link to="/sign-in">
-              <li className="transition duration-300 font-semibold hover:shadow-current hover:text-black px-4 py-2 rounded hover:scale-105">
-                Sign In
-              </li>
+            <Link to="/profile">
+              {currentUser ? (
+                <img
+                  className="rounded-full h-7 w-7 object-cover"
+                  src={currentUser.avatar}
+                  alt="profile"
+                />
+              ) : (
+                <li className="transition duration-300 font-semibold hover:shadow-current hover:text-black px-4 py-2 rounded hover:scale-105">
+                  Sign In
+                </li>
+              )}
             </Link>
           </ul>
           <form className="lg:inline border border-gray-400 font-semibold hover:shadow-current hover:text-black rounded hover:scale-105">
