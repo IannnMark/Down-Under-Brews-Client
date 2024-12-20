@@ -116,6 +116,10 @@ export default function Home() {
             From our sustainable packaging to supporting fair-trade farmers, we
             aim to make every sip count.
           </p>
+
+          <button className="bg-orange-300 text-red-950 rounded-lg uppercase px-3 py-2 hover:scale-105 transition duration-300 text-[16px] font-semibold">
+            Find Out Why We're Unique
+          </button>
         </div>
 
         <div
