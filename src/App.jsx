@@ -12,6 +12,7 @@ import Profile from "./pages/user/Profile";
 import Dashboard from "./pages/admin/Dashboard";
 import CreateProduct from "./pages/admin/CreateProduct";
 import AboutUs from "./pages/Content/AboutUs";
+import ProductsList from "./pages/admin/ProductsList";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route element={<PrivateRoute isAdmin={true} />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/admin/create-product" element={<CreateProduct />} />
+          <Route path="/admin/products" element={<ProductsList />} />
         </Route>
       </Routes>
     </BrowserRouter>
