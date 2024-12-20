@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import heroImage from "../../../images/hero_image.png";
 import AboutUs from "./AboutUs";
+import farmerImage from "../../../images/farmer_image.png";
 export default function Home() {
   const [recentProducts, setRecentProducts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -62,7 +63,6 @@ export default function Home() {
         ></div>
       </div>
 
-   
       <AboutUs />
 
       <div className="max-w-5xl mx-auto p-3 flex flex-col gap-8 my-10">
@@ -102,7 +102,35 @@ export default function Home() {
         )}
       </div>
 
-      <div className="flex flex-col items-center gap-6 p-16 text-red-950"></div>
+      <div className="flex flex-col md:flex-row justify-center md:p-16">
+        <div className="max-w-lg p-10 bg-red-950 text-orange-300 md:flex-row rounded-lg">
+          <h1 className="text-[24px] md:text-[50px] font-bold text-left my-10">
+            More Than Just a Brew - It's a Commitment
+          </h1>
+          <p className="text-left font-normal my-7 text-[14px] md:text-[16px]">
+            We believe great coffee should do more than just taste good. That's
+            why we prioritize ethical sourcing and environmentally friendly
+            practices.
+          </p>
+          <p className="text-left font-normal my-7 text-[14px] md:text-[16px]">
+            From our sustainable packaging to supporting fair-trade farmers, we
+            aim to make every sip count.
+          </p>
+        </div>
+
+        <div
+          className="w-full mg:w-[652px] h-[300px] md:h-[673px] rounded-lg"
+          style={{
+            backgroundImage: `url(${farmerImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "bottom",
+          }}
+        ></div>
+      </div>
+
+      <div className="">
+        <div></div>
+      </div>
     </div>
   );
 }
