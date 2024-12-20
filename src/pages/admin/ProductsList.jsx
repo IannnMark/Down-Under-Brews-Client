@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import DataTable from "react-data-table-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faEdit, faE } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 export default function ProductsList() {
   const [products, setProducts] = useState([]);
@@ -13,18 +13,22 @@ export default function ProductsList() {
 
   const fetchProducts = async () => {
     try {
-      const res = await fetch(`/admin/product/admin/products`, {
+      const res = await fetch(`/api/product/admin/products`, {
         method: "GET",
         credentials: "include",
       });
-      const data = await res.json();
-      console.log(data);
 
-      setProducts(data.products || []);
-      setFilteredProducts(data.products || []);
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        setProducts(data);
+        setFilteredProducts(data);
+      } else {
+        console.log("No products found in the response.");
+      }
+
       setLoading(false);
     } catch (error) {
-      console.error("Error fetching products: ", error);
+      console.error("Error fetching products:", error);
       setLoading(false);
     }
   };
@@ -148,7 +152,7 @@ export default function ProductsList() {
 
   return (
     <div className="container mx-auto p-6">
-      <div className="fixed top-0 left-0 h-screen bg-red-950 text-white flex flex-col shadow-lg border-r z-40">
+      <div className="fixed top-0 left-0 h-screen bg-gray-800 text-white flex flex-col border-r shadow-lg z-40">
         <Sidebar />
       </div>
       <h1 className="text-3xl text-black font-semibold mb-4 text-center">
@@ -167,7 +171,7 @@ export default function ProductsList() {
           <input
             type="text"
             className="border border-gray-400 rounded px-3 py-1"
-            placeholder="Search..."
+            placeholder="Search...."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
