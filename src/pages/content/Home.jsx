@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import heroImage from "../../../images/hero_image.png";
 import AboutUs from "./AboutUs";
 import farmerImage from "../../../images/farmer_image.png";
+import cafeGallery1 from "../../../images/cafe_gallery_1.png";
+import cafeGallery2 from "../../../images/cafe_gallery_2.png";
 export default function Home() {
   const [recentProducts, setRecentProducts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,6 +39,13 @@ export default function Home() {
     };
     recentProducts();
   }, []);
+
+  const images = [
+    { src: cafeGallery1, alt: "Cafe Gallery 1" },
+    { src: cafeGallery2, alt: "Cafe Gallery 2" },
+    { src: cafeGallery1, alt: "Cafe Gallery 1" },
+    { src: cafeGallery2, alt: "Cafe Gallery 2" },
+  ];
 
   return (
     <div>
@@ -123,7 +132,7 @@ export default function Home() {
         </div>
 
         <div
-          className="w-full mg:w-[652px] h-[300px] md:h-[673px] rounded-lg"
+          className="w-full md:w-[652px] h-[300px] md:h-[673px] rounded-lg"
           style={{
             backgroundImage: `url(${farmerImage})`,
             backgroundSize: "cover",
@@ -145,9 +154,26 @@ export default function Home() {
             <br />
             <span className="whitespace-nowrap ml-5">
               Meet fellow coffee lovers, learn about the craft, and savor a brew
-              made just for you..
+              made just for you.
             </span>
           </p>
+        </div>
+      </div>
+      <div className="w-full max-w-5xl mx-auto my-10">
+        <div className="flex overflow-x-scroll space-x-4 p-3 scrollbar-hide">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-[1017px] h-[674px] md:w-[900px] rounded-lg"
+              style={{
+                backgroundImage: `url(${image.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "bottom",
+              }}
+            >
+              <span className="sr-only">{image.alt}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
