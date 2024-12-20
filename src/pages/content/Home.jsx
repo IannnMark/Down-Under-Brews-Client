@@ -132,8 +132,23 @@ export default function Home() {
         ></div>
       </div>
 
-      <div className="">
-        <div></div>
+      <div className="flex flex-col md:flex-row justify-center items-center text-red-950">
+        <div className="max-w-lg p-5">
+          <h1 className="text-[24px] md:text-[48px] font-semibold text-center">
+            Discover Our Café
+          </h1>
+          <p className="text-[14px] md:text-[16px] font-normal text-center mt-5">
+            <span className="whitespace-nowrap">
+              Step into our Melbourne roastery and enjoy the warm atmosphere of
+              a local coffee shop.
+            </span>
+            <br />
+            <span className="whitespace-nowrap ml-5">
+              Meet fellow coffee lovers, learn about the craft, and savor a brew
+              made just for you..
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );
