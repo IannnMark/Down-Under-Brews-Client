@@ -83,7 +83,7 @@ export default function Sidebar() {
                     <SidebarItem
                       icon={<FontAwesomeIcon icon={faPlus} />}
                       text="Create Product"
-                      to="/create-product"
+                      to="/admin/create-product"
                     />
                   </ul>
                 )}
