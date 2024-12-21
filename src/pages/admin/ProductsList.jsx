@@ -103,15 +103,11 @@ export default function ProductsList() {
       sortable: true,
     },
     {
-      name: "Price",
-      selector: (row) => `$${row.price}`,
-      sortable: true,
-    },
-    {
       name: "availableWeights",
       selector: (row) =>
         row.availableWeights.map(
-          (weight) => `${weight.weight}g - ${weight.stock} in stock`
+          (weight) =>
+            `${weight.weight}g - ${weight.stock} in stock - ${weight.price}`
         ),
     },
     {
