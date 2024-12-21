@@ -15,7 +15,9 @@ export default function ProductItem({ product }) {
         <h3 className="truncate text-lg font-semibold text-red-950">
           {product.name}
         </h3>
-        <p className="text-red-950 font-semibold">${product.price}</p>
+        <p className="text-red-950 font-semibold">
+          ${product.availableWeights[0].price}
+        </p>
       </div>
     </div>
   );
