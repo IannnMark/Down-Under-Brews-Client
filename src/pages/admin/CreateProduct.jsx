@@ -17,7 +17,6 @@ export default function CreateProduct() {
     category: "",
     origin: "",
     roastLevel: "",
-    price: 1,
     availableWeights: [],
     availability: false,
     processingMethod: "",
@@ -53,7 +52,7 @@ export default function CreateProduct() {
   };
 
   const addWeight = () => {
-    setWeights([...weights, { weight: "", stock: 0 }]);
+    setWeights([...weights, { weight: "", stock: 0, price: 0 }]);
   };
 
   const handleWeightChange = (index, field, value) => {
@@ -160,17 +159,6 @@ export default function CreateProduct() {
             value={formData.origin}
           />
         </div>
-        <input
-          type="number"
-          placeholder="Price"
-          className="border p-3 rounded-lg"
-          id="price"
-          required
-          min="1"
-          step="0.01"
-          onChange={handleChange}
-          value={formData.price}
-        />
         <select
           id="roastLevel"
           className="border p-3 rounded-lg"
@@ -242,6 +230,15 @@ export default function CreateProduct() {
                 value={weight.stock}
                 onChange={(e) =>
                   handleWeightChange(index, "stock", e.target.value)
+                }
+              />
+              <input
+                type="number"
+                placeholder="Price"
+                className="border p-2 rounded-lg"
+                value={weight.price}
+                onChange={(e) =>
+                  handleWeightChange(index, "price", e.target.value)
                 }
               />
               <button
