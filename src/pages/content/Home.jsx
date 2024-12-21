@@ -1,6 +1,5 @@
 import ProductItem from "../../components/ProductItem";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import heroImage from "../../../images/hero_image.png";
 import AboutUs from "./AboutUs";
 import farmerImage from "../../../images/farmer_image.png";
