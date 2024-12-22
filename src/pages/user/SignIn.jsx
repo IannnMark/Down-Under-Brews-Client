@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import OAuth from "../../components/OAuth";
 
 import {
   signInStart,
@@ -54,15 +55,7 @@ export default function SignIn() {
       </h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <div className="flex justify-center">
-          <button className="border rounded-lg p-2 text-xl w-80 flex items-center justify-center gap-2">
-            <img
-              src="/Images/Google-icon.png"
-              alt="Google Icon"
-              className="w-6 h-6"
-            />
-            Login with Google
-          </button>
-          {/* <OAuth/> */}
+          <OAuth />
         </div>
         <div className="flex items-center my-3">
           <hr className="flex-grow border-gray-400" />
