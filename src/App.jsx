@@ -11,8 +11,8 @@ import PrivateRoute from "./components/PrivateRoute";
 import Profile from "./pages/user/Profile";
 import Dashboard from "./pages/admin/Dashboard";
 import CreateProduct from "./pages/admin/CreateProduct";
-import AboutUs from "./pages/Content/AboutUs";
 import ProductsList from "./pages/admin/ProductsList";
+import AboutUs from "./pages/Content/AboutUs";
 
 function App() {
   return (
