@@ -5,6 +5,7 @@ import AboutUs from "./AboutUs";
 import farmerImage from "../../../images/farmer_image.png";
 import cafeGallery1 from "../../../images/cafe_gallery_1.png";
 import cafeGallery2 from "../../../images/cafe_gallery_2.png";
+import Footer from "../../components/Footer";
 export default function Home() {
   const [recentProducts, setRecentProducts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -175,6 +176,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
