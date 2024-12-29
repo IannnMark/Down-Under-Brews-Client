@@ -176,6 +176,14 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      <div className="flex flex-col md:flex-row justify-center items-center text-red-950">
+        <div className="max-w-lg p-5">
+          <h1 className="text-[50px] md:text-[48px] font-normal text-center whitespace-nowrap uppercase">
+            Connect us on Instagram!
+          </h1>
+        </div>
+      </div>
       <Footer />
     </div>
   );
