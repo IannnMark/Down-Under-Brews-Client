@@ -8,6 +8,11 @@ import cafeGallery2 from "../../../images/cafe_gallery_2.png";
 import Footer from "../../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import igPost1 from "../../../images/ig_post_1.png";
+import igPost2 from "../../../images/ig_post_2.png";
+import igPost3 from "../../../images/ig_post_3.png";
+import igPost4 from "../../../images/ig_post_4.png";
+
 export default function Home() {
   const [recentProducts, setRecentProducts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -193,9 +198,32 @@ export default function Home() {
               />
             </div>
           </div>
+
           <h3 className="text-[16px] md:text-[12px] font-bold whitespace-nowrap uppercase flex items-center justify-center mt-3">
             Down Under Brews
           </h3>
+          <div className="flex flex-row justify-center items-center space-x-4 mt-5">
+            <img
+              src={igPost1}
+              alt="Instagram Image "
+              className="flex-shrink-0 w-[402px] h-[402px] rounded-lg"
+            />
+            <img
+              src={igPost2}
+              alt="Instagram Image "
+              className="flex-shrink-0 w-[402px] h-[402px] rounded-lg"
+            />
+            <img
+              src={igPost3}
+              alt="Instagram Image "
+              className="flex-shrink-0 w-[402px] h-[402px] rounded-lg"
+            />
+            <img
+              src={igPost4}
+              alt="Instagram Image "
+              className="flex-shrink-0 w-[402px] h-[402px] rounded-lg"
+            />
+          </div>
         </div>
       </div>
 
