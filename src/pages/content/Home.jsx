@@ -6,6 +6,8 @@ import farmerImage from "../../../images/farmer_image.png";
 import cafeGallery1 from "../../../images/cafe_gallery_1.png";
 import cafeGallery2 from "../../../images/cafe_gallery_2.png";
 import Footer from "../../components/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 export default function Home() {
   const [recentProducts, setRecentProducts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -179,11 +181,24 @@ export default function Home() {
 
       <div className="flex flex-col md:flex-row justify-center items-center text-red-950">
         <div className="max-w-lg p-5">
-          <h1 className="text-[50px] md:text-[48px] font-normal text-center whitespace-nowrap uppercase">
-            Connect us on Instagram!
+          <h1 className="text-[50px] md:text-[48px] font-bold whitespace-nowrap uppercase flex items-center justify-center">
+            Connect with us on Instagram!
           </h1>
+
+          <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center h-14 w-14 rounded-full bg-red-950">
+              <FontAwesomeIcon
+                icon={faInstagram}
+                className="text-orange-300 hover:text-pink-600 h-6 w-6"
+              />
+            </div>
+          </div>
+          <h3 className="text-[16px] md:text-[12px] font-bold whitespace-nowrap uppercase flex items-center justify-center mt-3">
+            Down Under Brews
+          </h3>
         </div>
       </div>
+
       <Footer />
     </div>
   );
