@@ -45,6 +45,7 @@ export default function OAuth() {
     <button
       className="border rounded-lg p-2 text-xl w-80 flex items-center justify-center gap-2"
       onClick={handleGoogleClick}
+      type="button"
     >
       <img
         src="../../images/Google-icon.png"
