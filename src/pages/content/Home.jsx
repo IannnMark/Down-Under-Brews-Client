@@ -194,7 +194,7 @@ export default function Home() {
             <div className="flex items-center justify-center h-14 w-14 rounded-full bg-red-950">
               <FontAwesomeIcon
                 icon={faInstagram}
-                className="text-orange-300 hover:text-pink-600 h-6 w-6"
+                className="text-white-300 hover:text-pink-600 h-6 w-6"
               />
             </div>
           </div>
@@ -223,6 +223,15 @@ export default function Home() {
               alt="Instagram Image "
               className="flex-shrink-0 w-[402px] h-[402px] rounded-lg"
             />
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="inline-flex items-center text-center justify-center uppercase mt-5 border border-black rounded-lg p-2">
+              <FontAwesomeIcon
+                icon={faInstagram}
+                className="text-black hover:text-pink-600 h-4 w-4"
+              />
+              <span className="ml-2 text-sm">Follow us on Instagram</span>
+            </div>
           </div>
         </div>
       </div>
