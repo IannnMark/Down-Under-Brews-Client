@@ -194,7 +194,7 @@ export default function Home() {
             <div className="flex items-center justify-center h-14 w-14 rounded-full bg-red-950">
               <FontAwesomeIcon
                 icon={faInstagram}
-                className="text-white-300 hover:text-pink-600 h-6 w-6"
+                className="text-white hover:text-pink-600 h-6 w-6"
               />
             </div>
           </div>
