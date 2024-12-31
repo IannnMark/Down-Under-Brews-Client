@@ -82,7 +82,7 @@ export default function SignIn() {
           <p>Remember me</p>
           <p className="text-blue-600">Forgot Password</p>
         </div>
-        <button className="bg-black text-white p-3 rounded-lg text-xl hover:opacity-95 disabled:opacity-80 mt-5">
+        <button className="bg-red-950 text-white p-3 rounded-lg text-xl hover:opacity-95 disabled:opacity-80 mt-5">
           {loading ? "Loading" : "Login now"}
         </button>
         <div className="flex gap-1 mt-5 justify-center">

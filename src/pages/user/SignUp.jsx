@@ -81,7 +81,7 @@ export default function SignUp() {
           id="password"
           onChange={handleChange}
         />
-        <button className="bg-black text-white p-3 rounded-lg text-xl hover:opacity-95 disabled:opacity-80 mt-5">
+        <button className="bg-red-950 text-white p-3 rounded-lg text-xl hover:opacity-95 disabled:opacity-80 mt-5">
           {loading ? "Loading..." : "Sign Up"}
         </button>
       </form>
