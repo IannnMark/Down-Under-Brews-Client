@@ -56,17 +56,17 @@ export default function Home() {
 
   return (
     <div>
-      <div className="flex flex-col items-center gap-6 p-28 text-red-950 max-w-6xl mx-auto">
-        <h1 className="uppercase font-serif text-5xl lg:text-5xl whitespace-nowrap overflow-hidden text-ellipsis">
+      <div className="flex flex-col items-center gap-6 px-6 py-16 sm:py-20 text-red-950 max-w-6xl mx-auto">
+        <h1 className="uppercase font-serif text-3xl sm:text-2xl md:text-3xl lg:text-5xl whitespace-nowrap text-center">
           Not just coffee, it's a taste of down under
         </h1>
-        <p className="text-[17px] font-medium text-center text-sm sm:text-base md:text-lg line-clamp-2">
+        <p className="text-sm sm:text-base md:text-lg font-medium text-center line-clamp-3">
           At Down Under Brews, we bring you premium, ethically sourced coffee
           beans from around the world, roasted to perfection in Melbourne.
           Discover the art of sustainable coffee crafted with passion and a
           touch of Aussie spirit.
         </p>
-        <button className="bg-red-900 text-white uppercase px-3 py-2 rounded-md mt-6 font-semibold hover:scale-105 transition duration-300">
+        <button className="bg-red-900 text-white uppercase px-4 py-2 sm:px-6 sm:py-3 rounded-md mt-6 font-semibold hover:scale-105 transition duration-300">
           Shop coffee blends
         </button>
         <div
@@ -233,6 +233,14 @@ export default function Home() {
               <span className="ml-2 text-sm">Follow us on Instagram</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-center items-center">
+        <div className="max-w-lg p-5">
+          <h1 className="text-[50px] md:text-[48px] font-semibold uppercase whitespace-nowrap flex items-center justify-center text-red-950">
+            Sip, Savor, & Learn: The Down Under Brews Blog
+          </h1>
         </div>
       </div>
 
