@@ -16,6 +16,11 @@ import blog1 from "../../../images/blog_img_1.png";
 import blog2 from "../../../images/blog_img_2.png";
 import blog3 from "../../../images/blog_img_3.png";
 
+const apiUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://down-under-brews-api.vercel.app/api"
+    : "/api";
+
 export default function Home() {
   const [recentProducts, setRecentProducts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,7 +44,7 @@ export default function Home() {
     const recentProducts = async () => {
       try {
         const res = await fetch(
-          `/api/product/get/products/?limit=&&sort=createdAt&order=desc`
+          `${apiUrl}/product/get/products/?limit=&&sort=createdAt&order=desc`
         );
         const data = await res.json();
         setRecentProducts(data);
