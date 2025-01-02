@@ -12,6 +12,9 @@ import igPost1 from "../../../images/ig_post_1.png";
 import igPost2 from "../../../images/ig_post_2.png";
 import igPost3 from "../../../images/ig_post_3.png";
 import igPost4 from "../../../images/ig_post_4.png";
+import blog1 from "../../../images/blog_img_1.png";
+import blog2 from "../../../images/blog_img_2.png";
+import blog3 from "../../../images/blog_img_3.png";
 
 export default function Home() {
   const [recentProducts, setRecentProducts] = useState([]);
@@ -237,10 +240,69 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center items-center">
-        <div className="max-w-lg p-5">
-          <h1 className="text-[50px] md:text-[48px] font-semibold uppercase whitespace-nowrap flex items-center justify-center text-red-950">
-            Sip, Savor, & Learn: The Down Under Brews Blog
+        <div className="w-[932px] max-w-lg p-5">
+          <h1 className="text-[50px] md:text-[36px] font-semibold uppercase whitespace-nowrap flex items-center justify-center text-red-950">
+            Sip, Savor,& Learn: The Down Under Brews Blog
           </h1>
+        </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto p-3 flex flex-col gap-8 my-10">
+        <div className="flex flex-wrap gap-6 justify-center">
+          <div className="shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-[300px]">
+            <img
+              src={blog1}
+              alt="Blog Image"
+              className="h-[353px] w-[395px] object-cover hover:scale-105 transition-scale duration-300"
+            />
+
+            <div className="p-3 flex flex-col hover:scale-105 transition duration-300 gap-2">
+              <h3 className="text-lg font-semibold text-black">
+                The Art of Coffee Brewing: A Beginner's Guide
+              </h3>
+              <p className="text-gray-500 text-[16px]">
+                Brewing the perfect cup of coffee doesn't have to be daunting.
+                At Down Under Brews, we’re here to simplify the process.
+              </p>
+            </div>
+          </div>
+
+          <div className="shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-[300px]">
+            <img
+              src={blog2}
+              alt="Blog Image"
+              className="h-[353px] w-[395px] object-cover hover:scale-105 transition-scale duration-300"
+            />
+
+            <div className="p-3 flex flex-col hover:scale-105 transition duration-300 gap-2">
+              <h3 className="text-lg font-semibold text-black">
+                Sustainable Sips: Our Ethical Coffee Commitment
+              </h3>
+              <p className="text-gray-500 text-[16px]">
+                Discover sustainability practices, from ethical sourcing to
+                eco-friendly packaging, and see how your coffee choices can
+                benefit the planet.
+              </p>
+            </div>
+          </div>
+          <div className="shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-[300px]">
+            <img
+              src={blog3}
+              alt="Blog Image"
+              className="h-[353px] w-[395px] object-cover hover:scale-105 transition-scale duration-300"
+            />
+
+            <div className="p-3 flex flex-col hover:scale-105 transition duration-300 gap-2">
+              <h3 className="text-lg font-semibold text-black">
+                A Journey Through Australia’s Coffee Culture
+              </h3>
+              <p className="text-gray-500 text-[16px]">
+                Australia boasts a rich coffee culture celebrated globally. In
+                this post, we’ll take you through the history, unique trends,
+                and local favorites.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
