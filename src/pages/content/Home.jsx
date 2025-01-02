@@ -306,6 +306,26 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="bg-orange-200 w-[1321px] h-[435px] mx-auto flex items-center justify-center">
+        <div className="flex flex-col text-center">
+          <h1 className="uppercase text-red-950 font-normal text-[40px]">
+            Get in touch
+          </h1>
+          <p className="text-red-950 font-normal text-[16px] mt-2">
+            We'd love to hear from you! Whether you have questions about our
+            blends, want to share
+            <br />
+            your coffee experience, or need assistance, reach out to us.
+          </p>
+          <button
+            className="uppercase text-orange-300 font-bold text-[16px] bg-red-950 px-6 py-3 rounded-lg mt-5 hover:scale-105 
+          transition duration-300 w-auto self-center"
+          >
+            Send us a message
+          </button>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
