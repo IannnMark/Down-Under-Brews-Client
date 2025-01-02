@@ -326,7 +326,9 @@ export default function Home() {
         </div>
       </div>
 
-      <Footer />
+      <div className="mt-20">
+        <Footer />
+      </div>
     </div>
   );
 }
