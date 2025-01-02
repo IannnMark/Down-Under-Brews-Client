@@ -1,14 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GrClose } from "react-icons/gr";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import Logo from "../../images/logo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set("searchTerm", searchTerm);
+    const searchQuery = urlParams.toString();
+    navigate(`/search?${searchQuery}`);
+  };
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get("searchTerm");
+    if (searchTermFromUrl) {
+      setSearchTerm(searchTermFromUrl);
+    }
+  }, [location.search]);
+
   return (
     <header className="bg-white shadow-lg py-3 text-base text-red-900">
       <div className="flex items-center justify-between w-full px-4 md:px-6 lg:px-8">
@@ -65,16 +84,23 @@ export default function Header() {
               )}
             </Link>
           </ul>
-          <form className="lg:inline border border-gray-400 font-semibold hover:shadow-current hover:text-black rounded hover:scale-105">
+          <form
+            onSubmit={handleSubmit}
+            className="lg:inline border border-gray-400 font-semibold hover:shadow-current hover:text-black rounded hover:scale-105"
+          >
             <input
               type="text"
               placeholder="Search..."
               className="bg-transparent focus:outline-none"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
             <button>
               <FaSearch
                 className="transition duration-300 font-semibold cursor-pointer"
                 size={20}
+                values={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
             </button>
           </form>
