@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./pages/Content/Home";
 import Contact from "./pages/content/Contact";
 import Product from "./pages/content/Product";
 import Shop from "./pages/content/Shop";
@@ -14,6 +13,7 @@ import CreateProduct from "./pages/admin/CreateProduct";
 import ProductsList from "./pages/admin/ProductsList";
 import AboutUs from "./pages/Content/AboutUs";
 import Search from "./pages/content/Search";
+import Home from "./pages/content/Home";
 
 function App() {
   return (
