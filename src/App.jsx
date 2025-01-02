@@ -13,6 +13,7 @@ import Dashboard from "./pages/admin/Dashboard";
 import CreateProduct from "./pages/admin/CreateProduct";
 import ProductsList from "./pages/admin/ProductsList";
 import AboutUs from "./pages/Content/AboutUs";
+import Search from "./pages/content/Search";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/visit-us" element={<VisitUs />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/search" element={<Search />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
         </Route>
