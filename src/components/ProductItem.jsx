@@ -7,7 +7,7 @@ export default function ProductItem({ product }) {
         <img
           src={product.imageUrls[0].url}
           alt={product.name}
-          className="h-[320px] sm:h-[220px] w-full object-cover hover:scale-105
+          className="h-[220px] sm:h-[250px] md:h-[320px] w-full object-cover hover:scale-105
            transition-scale duration-300"
         />
       </Link>
