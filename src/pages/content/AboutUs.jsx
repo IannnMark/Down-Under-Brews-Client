@@ -34,7 +34,7 @@ export default function AboutUs() {
 
       <div className="flex flex-col lg:flex-row p-8 md:p-16 text-orange-300 bg-red-950 mt-[-110px]">
         <div className="flex-1 text-left">
-          <h1 className="text-[24px] md:text-[33px] font-bold leading-normal">
+          <h1 className="text-[22px] md:text-[33px] font-bold leading-normal my-3">
             <span className="whitespace-nowrap">
               From Bean to Brew - Meet Down
             </span>
