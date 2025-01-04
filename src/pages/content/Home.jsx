@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <div>
       <div className="flex flex-col items-center gap-6 px-6 py-16 sm:py-20 text-red-950 max-w-6xl mx-auto">
-        <h1 className="uppercase font-serif text-[17px] sm:text-lg md:text-3xl lg:text-5xl whitespace-nowrap text-center">
+        <h1 className="uppercase font-serif text-[15px] sm:text-lg md:text-3xl lg:text-5xl whitespace-nowrap text-center">
           Not just coffee, it's a taste of down under
         </h1>
         <p className="text-sm sm:text-base md:text-lg font-medium text-center line-clamp-3">
@@ -194,7 +194,7 @@ export default function Home() {
 
       <div className="flex flex-col md:flex-row justify-center items-center text-red-950">
         <div className="max-w-lg p-5">
-          <h1 className="text-[23px] sm:text-[36px] md:text-[50px] font-bold whitespace-nowrap uppercase flex items-center justify-center">
+          <h1 className="text-[20px] sm:text-[36px] md:text-[50px] font-bold whitespace-nowrap uppercase flex items-center justify-center">
             Connect with us on Instagram!
           </h1>
 
@@ -248,7 +248,7 @@ export default function Home() {
 
       <div className="flex flex-col md:flex-row justify-center items-center">
         <div className="w-[932px] max-w-lg p-5">
-          <h1 className="text-[16px] md:text-[36px] font-semibold uppercase whitespace-nowrap flex items-center justify-center text-red-950">
+          <h1 className="text-[14px] md:text-[36px] font-semibold uppercase whitespace-nowrap flex items-center justify-center text-red-950">
             Sip, Savor,& Learn: The Down Under Brews Blog
           </h1>
         </div>
