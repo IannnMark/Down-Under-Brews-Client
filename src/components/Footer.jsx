@@ -8,8 +8,8 @@ import {
 export default function Footer() {
   return (
     <div className="bg-red-950 text-orange-300 p-10">
-      <div className="flex justify-between max-w-6xl mx-auto">
-        <div>
+      <div className="flex flex-col md:flex-row md:justify-between max-w-6xl mx-auto space-y-8 md:space-y-0">
+        <div className="flex-1">
           <h3 className="text-[24px] font-[400] mb-4">Contact</h3>
           <p className="flex items-center font-[400]">
             <PhoneIcon className="h-5 w-5 mr-2 stroke-2" />
@@ -50,9 +50,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="flex-1">
           <h3 className="text-[24px] font-[400] mb-4">Quick Links</h3>
-          <ul>
+          <ul className="space-y-2">
             <li>
               <a href="/" className="hover:underline">
                 Home
@@ -81,13 +81,13 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="flex-1">
           <h3 className="text-[24px] font-[400] mb-4">Location</h3>
           <p>Address: Melbourne,</p>
           <p>Australia</p>
         </div>
 
-        <div>
+        <div className="flex-1">
           <h3 className="text-[24px] font-[400] mb-4">Newsletter</h3>
           <p>Sign up for our newsletter to get the latest on new blends, </p>
           <p>special offers, and coffee tips. Plus, be the first to know </p>
@@ -95,13 +95,14 @@ export default function Footer() {
           <input
             type="email"
             placeholder="Enter your email"
-            className="p-2 rounded bg-red-950 text-orange-300 border border-gray-400 mt-4"
+            className="p-2 rounded bg-red-950 text-orange-300 border border-gray-400 mt-4 w-full md:w-auto"
           />
-          <button className="bg-orange-300 text-red-950 py-2 rounded-lg h-[45px] w-[133px]">
+          <button className="bg-orange-300 text-red-950 py-2 rounded-lg mt-2 md:mt-4 h-[45px] w-full md:w-[133px]">
             Get Started
           </button>
         </div>
       </div>
+
       <div className="border-t border-orange-300 mt-8 pt-4 text-center">
         <p className="text-sm">
           © {new Date().getFullYear()} Down Under Brews. All rights reserved.
