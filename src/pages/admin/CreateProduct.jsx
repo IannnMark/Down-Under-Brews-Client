@@ -2,6 +2,11 @@ import { faBullseye } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const apiUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://down-under-brews-api.vercel.app/api"
+    : "/api";
+
 export default function CreateProduct() {
   const navigate = useNavigate();
 
@@ -94,7 +99,7 @@ export default function CreateProduct() {
     });
 
     try {
-      const res = await fetch(`/api/product/admin/product/new`, {
+      const res = await fetch(`${apiUrl}/product/admin/product/new`, {
         method: "POST",
         credentials: "include",
         body: formPayload,

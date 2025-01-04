@@ -5,6 +5,11 @@ import DataTable from "react-data-table-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
+const apiUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://down-under-brews-api.vercel.app/api"
+    : "/api";
+
 export default function ProductsList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,7 +18,7 @@ export default function ProductsList() {
 
   const fetchProducts = async () => {
     try {
-      const res = await fetch(`/api/product/admin/products`, {
+      const res = await fetch(`${apiUrl}/product/admin/products`, {
         method: "GET",
         credentials: "include",
       });

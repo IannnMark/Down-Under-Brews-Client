@@ -7,6 +7,11 @@ import {
   signOutUserFailure,
 } from "../../redux/user/userSlice";
 
+const apiUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://down-under-brews-api.vercel.app/api"
+    : "/api";
+
 export default function Profile() {
   const { currentUser, loading, error } = useSelector((state) => state.user);
   const [formData, setFormData] = useState({});
@@ -32,7 +37,7 @@ export default function Profile() {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await fetch(`/api/auth/logout`);
+      const res = await fetch(`${apiUrl}/auth/logout`);
       const data = await res.json();
       if (data.success === false) {
         dispatch(signOutUserFailure(data.message));

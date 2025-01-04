@@ -9,6 +9,11 @@ import {
   signInFailure,
 } from "../../redux/user/userSlice";
 
+const apiUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://down-under-brews-api.vercel.app/api"
+    : "/api";
+
 export default function SignIn() {
   const [formData, setFormData] = useState({});
   const { loading, error } = useSelector((state) => state.user);
@@ -26,7 +31,7 @@ export default function SignIn() {
     e.preventDefault();
     try {
       dispatch(signInStart());
-      const res = await fetch(`/api/auth/sign-in`, {
+      const res = await fetch(`${apiUrl}/auth/sign-in`, {
         method: "POST",
         credentials: "include",
         headers: {

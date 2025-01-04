@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProductItem from "../../components/ProductItem";
 
+const apiUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://down-under-brews-api.vercel.app/api"
+    : "/api";
+
 export default function Search() {
   const navigate = useNavigate();
   const [sidebardata, setSidebarData] = useState({
@@ -40,7 +45,7 @@ export default function Search() {
       setLoading(true);
       setShowMore(false);
       const searchQuery = urlParams.toString();
-      const res = await fetch(`/api/product/get/products?${searchQuery}`);
+      const res = await fetch(`${apiUrl}/product/get/products?${searchQuery}`);
       const data = await res.json();
 
       if (data.length > 8) {
@@ -90,7 +95,7 @@ export default function Search() {
     const urlParams = new URLSearchParams(location.search);
     urlParams.set("startIndex", startIndex);
     const searchQuery = urlParams.toString();
-    const res = await fetch(`/api/product/get/products?${searchQuery}`);
+    const res = await fetch(`${apiUrl}/product/get/products?${searchQuery}`);
     const data = await res.json();
     if (data.length < 9) {
       setShowMore(false);
