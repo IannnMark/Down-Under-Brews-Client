@@ -3,6 +3,7 @@ import { app } from "../firebase";
 import { useDispatch } from "react-redux";
 import { signInSuccess } from "../redux/user/userSlice";
 import { useNavigate } from "react-router-dom";
+import googleIcon from "../../images/Google-icon.png";
 
 const apiUrl =
   process.env.NODE_ENV === "production"
@@ -52,11 +53,7 @@ export default function OAuth() {
       onClick={handleGoogleClick}
       type="button"
     >
-      <img
-        src="../../images/Google-icon.png"
-        alt="Google Icon"
-        className="w-6 h-6"
-      />
+      <img src={googleIcon} alt="Google Icon" className="w-6 h-6" />
       Login with Google
     </button>
   );
