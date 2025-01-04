@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <div>
       <div className="flex flex-col items-center gap-6 px-6 py-16 sm:py-20 text-red-950 max-w-6xl mx-auto">
-        <h1 className="uppercase font-serif text-3xl sm:text-2xl md:text-3xl lg:text-5xl whitespace-nowrap text-center">
+        <h1 className="uppercase font-serif text-[17px] sm:text-lg md:text-3xl lg:text-5xl whitespace-nowrap text-center">
           Not just coffee, it's a taste of down under
         </h1>
         <p className="text-sm sm:text-base md:text-lg font-medium text-center line-clamp-3">
@@ -194,7 +194,7 @@ export default function Home() {
 
       <div className="flex flex-col md:flex-row justify-center items-center text-red-950">
         <div className="max-w-lg p-5">
-          <h1 className="text-[50px] md:text-[48px] font-bold whitespace-nowrap uppercase flex items-center justify-center">
+          <h1 className="text-[23px] sm:text-[36px] md:text-[50px] font-bold whitespace-nowrap uppercase flex items-center justify-center">
             Connect with us on Instagram!
           </h1>
 
@@ -207,9 +207,10 @@ export default function Home() {
             </div>
           </div>
 
-          <h3 className="text-[16px] md:text-[12px] font-bold whitespace-nowrap uppercase flex items-center justify-center mt-3">
+          <h3 className="text-[12px] sm:text-[14px] md:text-[16px] font-bold whitespace-nowrap uppercase flex items-center justify-center mt-3">
             Down Under Brews
           </h3>
+
           <div className="flex flex-row justify-center items-center space-x-4 mt-5">
             <img
               src={igPost1}
@@ -232,6 +233,7 @@ export default function Home() {
               className="flex-shrink-0 w-[402px] h-[402px] rounded-lg"
             />
           </div>
+
           <div className="flex items-center justify-center">
             <div className="inline-flex items-center text-center justify-center uppercase mt-5 border border-black rounded-lg p-2">
               <FontAwesomeIcon
@@ -246,7 +248,7 @@ export default function Home() {
 
       <div className="flex flex-col md:flex-row justify-center items-center">
         <div className="w-[932px] max-w-lg p-5">
-          <h1 className="text-[50px] md:text-[36px] font-semibold uppercase whitespace-nowrap flex items-center justify-center text-red-950">
+          <h1 className="text-[16px] md:text-[36px] font-semibold uppercase whitespace-nowrap flex items-center justify-center text-red-950">
             Sip, Savor,& Learn: The Down Under Brews Blog
           </h1>
         </div>
@@ -311,7 +313,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-orange-200 w-[1321px] h-[435px] mx-auto flex items-center justify-center">
+      <div className="bg-orange-200 md:w-[1321px] md:h-[435px] mx-auto flex items-center justify-center">
         <div className="flex flex-col text-center">
           <h1 className="uppercase text-red-950 font-normal text-[40px]">
             Get in touch
