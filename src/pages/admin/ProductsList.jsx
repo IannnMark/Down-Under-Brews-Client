@@ -64,6 +64,32 @@ export default function ProductsList() {
     return <p className="text-center text-red-950 text-xl">Loading Products</p>;
   }
 
+  const handleArchivedProduct = async (productId) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to archive this product?"
+    );
+    if (confirmDelete) {
+      try {
+        const res = await fetch(
+          `${apiUrl}/product/admin/product/archived-product/${productId}`,
+          {
+            method: "DELETE",
+            credentials: "include",
+          }
+        );
+        const data = await res.json();
+        if (data.success === false) {
+          console.log(data.message);
+          return;
+        }
+        alert("Product archived successfully!");
+        window.location.reload();
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  };
+
   const columns = [
     {
       name: "Image",
@@ -144,7 +170,10 @@ export default function ProductsList() {
               <FontAwesomeIcon icon={faEdit} className="mr-1 h-5" />
             </button>
           </Link>
-          <button className="text-red-800">
+          <button
+            className="text-red-800"
+            onClick={() => handleArchivedProduct(row._id)}
+          >
             <FontAwesomeIcon icon={faTrash} className="mr-1 h-5" />
           </button>
         </>
