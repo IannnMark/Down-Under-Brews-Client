@@ -139,9 +139,11 @@ export default function ProductsList() {
       name: "Actions",
       cell: (row) => (
         <>
-          <button className="text-green-800">
-            <FontAwesomeIcon icon={faEdit} className="mr-1 h-5" />
-          </button>
+          <Link to={`/update-product/${row._id}`}>
+            <button className="text-green-800">
+              <FontAwesomeIcon icon={faEdit} className="mr-1 h-5" />
+            </button>
+          </Link>
           <button className="text-red-800">
             <FontAwesomeIcon icon={faTrash} className="mr-1 h-5" />
           </button>
