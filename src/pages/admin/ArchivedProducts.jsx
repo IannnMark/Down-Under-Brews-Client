@@ -93,6 +93,34 @@ export default function ProductsList() {
     }
   };
 
+  const handleDeleteProduct = async (productId) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this product"
+    );
+
+    if (confirmDelete) {
+      try {
+        const res = await fetch(
+          `${apiUrl}/product/admin/product/delete/${productId}`,
+          {
+            method: "DELETE",
+            credentials: "include",
+          }
+        );
+
+        const data = await res.json();
+        if (data.success === false) {
+          console.log(data.message);
+          return;
+        }
+        alert("Product deleted successfully!");
+        window.location.reload();
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  };
+
   const columns = [
     {
       name: "Image",
@@ -177,7 +205,7 @@ export default function ProductsList() {
 
           <button
             className="text-red-800"
-            onClick={() => handleArchivedProduct(row._id)}
+            onClick={() => handleDeleteProduct(row._id)}
           >
             <FontAwesomeIcon icon={faTrash} className="mr-1 h-5" />
           </button>
