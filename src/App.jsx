@@ -15,6 +15,7 @@ import ProductsList from "./pages/admin/ProductsList";
 import AboutUs from "./pages/content/AboutUs";
 import Search from "./pages/content/Search";
 import UpdateProduct from "./pages/admin/UpdateProduct";
+import ArchivedProducts from "./pages/admin/ArchivedProducts";
 
 function App() {
   return (
@@ -40,6 +41,10 @@ function App() {
           <Route
             path="/update-product/:productId"
             element={<UpdateProduct />}
+          />
+          <Route
+            path="/admin/archived-products"
+            element={<ArchivedProducts />}
           />
         </Route>
       </Routes>
