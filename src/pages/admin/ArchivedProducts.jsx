@@ -64,6 +64,35 @@ export default function ProductsList() {
     return <p className="text-center text-red-950 text-xl">Loading Products</p>;
   }
 
+  const handleRestoreProduct = async (productId) => {
+    const confirmRestore = window.confirm(
+      "Are you sure you want to restore this product?"
+    );
+
+    if (confirmRestore) {
+      try {
+        const res = await fetch(
+          `${apiUrl}/product/admin/product/restore-product/${productId}`,
+          {
+            method: "PUT",
+            credentials: "include",
+          }
+        );
+
+        const data = await res.json();
+
+        if (data.success === false) {
+          console.log(data.message);
+          return;
+        }
+        alert("Product restored successfully!");
+        window.location.reload();
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  };
+
   const columns = [
     {
       name: "Image",
@@ -139,8 +168,11 @@ export default function ProductsList() {
       name: "Actions",
       cell: (row) => (
         <>
-          <button className="text-green-800">
-            <FontAwesomeIcon icon={faEdit} className="mr-1 h-5" />
+          <button
+            className="text-green-800"
+            onClick={() => handleRestoreProduct(row._id)}
+          >
+            <FontAwesomeIcon icon={faUndo} className="mr-1 h-5" />
           </button>
 
           <button
