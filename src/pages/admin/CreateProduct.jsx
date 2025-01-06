@@ -111,6 +111,7 @@ export default function CreateProduct() {
       if (data.success === false) {
         setError(data.message);
       } else {
+        alert("Product created successfully!");
         navigate("/admin/products");
       }
     } catch (error) {
