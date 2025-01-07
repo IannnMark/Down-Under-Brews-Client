@@ -88,7 +88,7 @@ export default function AboutUs() {
         </div>
         <div className="flex flex-col gap-4 ml-5 pr-5">
           <div
-            className="w-[482px] h-[626px] rounded-md"
+            className="w-full h-[300px] md:w-[482px] md:h-[626px] rounded-md my-5"
             style={{
               backgroundImage: `url(${aboutImage3})`,
               backgroundSize: "cover",
