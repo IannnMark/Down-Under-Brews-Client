@@ -5,6 +5,8 @@ import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import Logo from "../../images/logo.png";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTachometerAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
@@ -69,6 +71,15 @@ export default function Header() {
         </div>
 
         <div className="hidden sm:flex absolute right-0 gap-6 items-center pr-3">
+          <ul>
+            <Link to={"/dashboard"}>
+              {currentUser && currentUser.role === "admin" && (
+                <span className="transition duration-300 font-semibold hover:shadow-current hover:text-black px-4 py-2 rounded hover:scale-105">
+                  {<FontAwesomeIcon icon={faTachometerAlt} />}
+                </span>
+              )}
+            </Link>
+          </ul>
           <ul>
             <Link to="/profile">
               {currentUser ? (
