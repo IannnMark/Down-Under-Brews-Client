@@ -147,7 +147,7 @@ export default function Home() {
         </div>
 
         <div
-          className="w-full md:w-[652px] h-[300px] md:h-[673px] rounded-lg"
+          className="w-full md:w-[652px] h-[390px] md:h-[673px] rounded-lg"
           style={{
             backgroundImage: `url(${farmerImage})`,
             backgroundSize: "cover",
@@ -179,7 +179,7 @@ export default function Home() {
           {images.map((image, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[1017px] h-[674px] md:w-[900px] rounded-lg"
+              className="flex-shrink-0 w-full h-[350px] lg:w-[1017px] lg:h-[674px] rounded-lg"
               style={{
                 backgroundImage: `url(${image.src})`,
                 backgroundSize: "cover",
