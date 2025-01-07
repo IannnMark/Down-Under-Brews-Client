@@ -78,7 +78,7 @@ export default function Home() {
           Shop coffee blends
         </button>
         <div
-          className="relative w-[1250px] h-[617px] flex justify-center items-end rounded-md"
+          className="relative w-full h-[300px] sm:w-[600px] sm:h-[400px] md:w-[900px] md:h-[500px] lg:w-[1250px] lg:h-[617px] flex justify-center items-end rounded-md"
           style={{
             backgroundImage: `url(${heroImage})`,
             backgroundSize: "cover",
