@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { addItemToCart } from "../../redux/cart/cartSlice";
+import { useDispatch } from "react-redux";
 
 const apiUrl =
   process.env.NODE_ENV === "production"
@@ -12,9 +14,10 @@ export default function Product() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [quantity, setQuantity] = useState(1);
-  const [selectedWeight, setSelectedWeight] = useState("");
+  const [selectedWeight, setSelectedWeight] = useState(null);
 
   const params = useParams();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -24,11 +27,14 @@ export default function Product() {
           `${apiUrl}/product/product/${params.productId}`
         );
         const data = await res.json();
+        console.log("Fetched product data:", data);
+
         if (data.success === false) {
           setError(true);
           setLoading(false);
           return;
         }
+
         setProduct(data);
         if (data.availableWeights && data.availableWeights.length > 0) {
           setSelectedWeight(data.availableWeights[0].weight);
@@ -65,6 +71,30 @@ export default function Product() {
   const totalPrice = selectedWeightObject
     ? selectedWeightObject.price * quantity
     : 0;
+
+  const handleAddToCart = () => {
+    if (!product || !selectedWeight) {
+      alert("Please select a weight and ensure the product is loaded.");
+      return;
+    }
+
+    const weightData = product.availableWeights?.find(
+      (w) => w.weight === selectedWeight
+    );
+
+    dispatch(
+      addItemToCart({
+        _id: product._id,
+        name: product.name,
+        roastLevel: product.roastLevel,
+        image: product.imageUrls[0].url,
+        weight: selectedWeight,
+        price: weightData?.price || 0,
+        availableWeights: product.availableWeights,
+        quantity,
+      })
+    );
+  };
 
   return (
     <main>
@@ -194,7 +224,10 @@ export default function Product() {
               <p className="text-[16px] md:text-[20px] font-semibold">
                 ${totalPrice.toFixed(2)} / {selectedWeight}
               </p>
-              <button className="bg-red-900 text-white uppercase px-3 py-2 rounded-md font-semibold hover:scale-105 transition duration-300">
+              <button
+                onClick={handleAddToCart}
+                className="bg-red-900 text-white uppercase px-3 py-2 rounded-md font-semibold hover:scale-105 transition duration-300"
+              >
                 Add to Cart
               </button>
             </div>
