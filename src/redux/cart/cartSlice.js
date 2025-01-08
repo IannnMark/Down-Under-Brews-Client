@@ -12,28 +12,51 @@ const cartSlice = createSlice({
     reducers: {
         addItemToCart: (state, action) => {
             const item = action.payload;
+
+            if (!item || !item._id || !item.weight || (!item.availableWeights && !item.price)) {
+                console.error("Invalid item payload:", item);
+                return;
+            }
+
             const existingItem = state.cartItems.find(
-                (cartItem) => cartItem._id === item._id
+                (cartItem) => cartItem._id === item._id && cartItem.weight === item.weight
             );
 
             if (existingItem) {
-                existingItem.quantity += 1;
+                existingItem.quantity += item.quantity || 1;
             } else {
-                const selectedWeight = item.selectedWeight;
-                const weightData = item.availableWeights.find(w => w.weight === selectedWeight);
+                if (item.availableWeights) {
+                    const weightData = item.availableWeights.find(
+                        (w) => w.weight === item.weight
+                    );
 
-                if (weightData) {
-                    state.cartItems.push({
-                        ...item,
-                        quantity: 1,
-                        price: weightData.price,
-                        weight: selectedWeight,
-                    });
+                    if (weightData) {
+                        state.cartItems.push({
+                            _id: item._id,
+                            name: item.name,
+                            roastLevel: item.roastLevel,
+                            image: item.image,
+                            quantity: item.quantity || 1,
+                            weight: item.weight,
+                            price: weightData.price,
+                        });
+                    } else {
+                        console.error("Selected weight not found in availableWeights:", item);
+                    }
                 } else {
-                    console.error("Selected weight not found in availableWeights");
+                    state.cartItems.push({
+                        _id: item._id,
+                        name: item.name,
+                        roastLevel: item.roastLevel,
+                        image: item.image,
+                        quantity: item.quantity || 1,
+                        weight: item.weight,
+                        price: item.price,
+                    });
                 }
             }
         },
+
         removeItemFromCart: (state, action) => {
             state.cartItems = state.cartItems.filter(
                 (cartItem) => cartItem._id !== action.payload
@@ -57,6 +80,7 @@ const cartSlice = createSlice({
     },
 });
 
-export const { addItemToCart, removeItemFromCart, increaseQty, decreaseQty, clearCart } = cartSlice.actions;
+export const { addItemToCart, removeItemFromCart, increaseQty, decreaseQty, clearCart } =
+    cartSlice.actions;
 
 export default cartSlice.reducer;
