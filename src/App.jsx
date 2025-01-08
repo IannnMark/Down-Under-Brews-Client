@@ -16,6 +16,7 @@ import AboutUs from "./pages/content/AboutUs";
 import Search from "./pages/content/Search";
 import UpdateProduct from "./pages/admin/UpdateProduct";
 import ArchivedProducts from "./pages/admin/ArchivedProducts";
+import Cart from "./pages/cart/Cart";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/cart" element={<Cart />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
         </Route>
