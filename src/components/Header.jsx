@@ -13,6 +13,8 @@ export default function Header() {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -115,12 +117,36 @@ export default function Header() {
               />
             </button>
           </form>
-          <div className="relative">
-            <FaShoppingCart
-              size={20}
-              className="transition duration-300 font-semibold hover:shadow-current hover:text-black hover:scale-105 rounded"
-            />
-          </div>
+
+          <Link to={"/cart"}>
+            {currentUser && currentUser.role !== "admin" ? (
+              <div className="relative">
+                <FaShoppingCart
+                  size={20}
+                  className="transition duration-300 font-semibold hover:shadow-current hover:text-black hover:scale-105 rounded"
+                />
+                {totalQuantity > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full px-1">
+                    {totalQuantity}
+                  </span>
+                )}
+              </div>
+            ) : (
+              !currentUser && (
+                <div className="relative">
+                  <FaShoppingCart
+                    size={20}
+                    className="transition duration-300 font-semibold hover:shadow-current hover:text-black hover:scale-105 rounded"
+                  />
+                  {totalQuantity > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full px-1">
+                      {totalQuantity}
+                    </span>
+                  )}
+                </div>
+              )
+            )}
+          </Link>
         </div>
         <div className="relative sm:hidden">
           <button
