@@ -27,7 +27,7 @@ export default function Cart() {
 
   const checkOutHandler = () => {
     if (currentUser) {
-      navigate("/confirm");
+      navigate("/shipping");
     } else {
       navigate("/sign-in");
     }
