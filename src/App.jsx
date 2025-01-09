@@ -17,6 +17,8 @@ import Search from "./pages/content/Search";
 import UpdateProduct from "./pages/admin/UpdateProduct";
 import ArchivedProducts from "./pages/admin/ArchivedProducts";
 import Cart from "./pages/cart/Cart";
+import Shipping from "./pages/cart/Shipping";
+import ConfirmOrder from "./pages/cart/ConfirmOrder";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/search" element={<Search />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/shipping" element={<Shipping />} />
+        <Route path="/confirm" element={<ConfirmOrder />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
         </Route>
