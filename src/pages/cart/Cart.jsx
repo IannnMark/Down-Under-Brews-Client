@@ -35,7 +35,7 @@ export default function Cart() {
 
   return (
     <Fragment>
-      <h1 className="text-2xl font-semibold text-center mt-6">You Cart</h1>
+      <h1 className="text-2xl font-semibold text-center mt-6">Your Cart</h1>
       {cartItems.length === 0 ? (
         <div className="text-center mt-10">
           <h2 className="text-lg font-medium">You Cart is Empty</h2>
