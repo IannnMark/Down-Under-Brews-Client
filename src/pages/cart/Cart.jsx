@@ -38,7 +38,7 @@ export default function Cart() {
       <h1 className="text-2xl font-semibold text-center mt-6">Your Cart</h1>
       {cartItems.length === 0 ? (
         <div className="text-center mt-10">
-          <h2 className="text-lg font-medium">You Cart is Empty</h2>
+          <h2 className="text-lg font-medium">Your Cart is Empty</h2>
           <button
             className="bg-red-950 text-white p-3 rounded-lg text-xl hover:opacity-95 disabled:opacity-80 mt-5"
             onClick={() => navigate("/shop")}
