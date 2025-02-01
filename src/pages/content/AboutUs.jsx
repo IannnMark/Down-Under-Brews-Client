@@ -3,7 +3,7 @@ import aboutImage2 from "../../../images/about_img_2.png";
 import aboutImage3 from "../../../images/about_img_3.png";
 export default function AboutUs() {
   return (
-    <div>
+    <div className="min-h-screen w-screen">
       <div className="flex flex-col md:flex-row items-center gap-6 p-8 md:p-16 text-orange-300 bg-red-950">
         <div className="flex flex-col md:flex-row items-center gap-6 p-8 md:p-16 mt-[-60px] mx-4 md:mx-64">
           <div className="flex flex-col items-center">

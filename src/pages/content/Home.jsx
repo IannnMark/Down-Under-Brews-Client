@@ -63,7 +63,7 @@ export default function Home() {
   ];
 
   return (
-    <div>
+    <div className="min-h-screen w-screen">
       <div className="flex flex-col items-center gap-6 px-6 py-16 sm:py-20 text-red-950 max-w-6xl mx-auto">
         <h1 className="uppercase font-serif text-[15px] sm:text-lg md:text-3xl lg:text-5xl whitespace-nowrap text-center">
           Not just coffee, it's a taste of down under
@@ -161,7 +161,7 @@ export default function Home() {
           <h1 className="text-[24px] md:text-[48px] font-semibold text-center">
             Discover Our Café
           </h1>
-          <p className="text-[14px] md:text-[16px] font-normal text-center mt-5">
+          <p className="text-[9px] md:text-[16px] font-normal text-center mt-5">
             <span className="whitespace-nowrap">
               Step into our Melbourne roastery and enjoy the warm atmosphere of
               a local coffee shop.
@@ -214,23 +214,23 @@ export default function Home() {
           <div className="flex flex-row justify-center items-center space-x-4 mt-5">
             <img
               src={igPost1}
-              alt="Instagram Image "
-              className="flex-shrink-0 w-[402px] h-[402px] rounded-lg"
+              alt="Instagram Image"
+              className="flex-shrink-0 w-[60px] h-[60px] md:w-[402px] md:h-[402px] rounded-lg"
             />
             <img
               src={igPost2}
-              alt="Instagram Image "
-              className="flex-shrink-0 w-[402px] h-[402px] rounded-lg"
+              alt="Instagram Image"
+              className="flex-shrink-0 w-[60px] h-[60px] md:w-[402px] md:h-[402px] rounded-lg"
             />
             <img
               src={igPost3}
-              alt="Instagram Image "
-              className="flex-shrink-0 w-[402px] h-[402px] rounded-lg"
+              alt="Instagram Image"
+              className="flex-shrink-0 w-[60px] h-[60px] md:w-[402px] md:h-[402px] rounded-lg"
             />
             <img
               src={igPost4}
-              alt="Instagram Image "
-              className="flex-shrink-0 w-[402px] h-[402px] rounded-lg"
+              alt="Instagram Image"
+              className="flex-shrink-0 w-[60px] h-[60px] md:w-[402px] md:h-[402px] rounded-lg"
             />
           </div>
 
@@ -248,7 +248,7 @@ export default function Home() {
 
       <div className="flex flex-col md:flex-row justify-center items-center">
         <div className="w-[932px] max-w-lg p-5">
-          <h1 className="text-[14px] md:text-[36px] font-semibold uppercase whitespace-nowrap flex items-center justify-center text-red-950">
+          <h1 className="text-[12px] md:text-[36px] font-semibold uppercase whitespace-nowrap flex items-center justify-center text-red-950">
             Sip, Savor,& Learn: The Down Under Brews Blog
           </h1>
         </div>
